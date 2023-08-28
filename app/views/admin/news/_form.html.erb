@@ -1,0 +1,59 @@
+<div class="form-container">
+<%= form_with(model: @news, url: @news.new_record? ? admin_news_index_path : admin_news_path(@news), method: @news.new_record? ? :post : :patch) do |f| %>
+ 
+  
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :headlines %>
+      <%= f.text_field :headlines %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :short_description %>
+      <%= f.text_area :short_description %>
+    </div>
+  
+    
+
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+
+
+    <div  >
+    <%= f.label :category_id %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </div>
+
+  <div  >
+    <%= f.label :state_id %><br>
+    <%= f.collection_select :state_id, State.all, :id, :name %>
+  </div>
+  <div>
+       
+    
+
+
+      <%= f.label :city_id %><br>
+      <%= f.collection_select :city_id,  City.all, :id, :name %>
+    </div>
+  
+
+    <div>
+         <%= f.label :images, 'Upload Images' %>
+           <%= f.file_field :images, multiple: true %>
+      </div>
+      <div class="field">
+    <%= f.label :videos, 'Upload Videos' %>
+    <%= f.file_field :videos, multiple: true %>
+  </div>
+    <div class="btn btn-primary">
+      <%= f.submit %>
+    </div>
+  <% end %>
+  </div>

@@ -1,0 +1,24 @@
+<h1>City</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cities.each do |city| %>
+      <tr>
+        <td><%= city.name %></td>
+        <td><%= link_to 'Show', admin_state_city_path(city.state, city) %></td>
+        <td><%= link_to 'Destroy', admin_state_city_path(city.state, city),data: {"turbo-method": :delete}%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New city', new_admin_state_city_path %>

@@ -1,0 +1,54 @@
+<%= form_with(model: @news, url: @news.new_record? ? editor_news_index_path : editor_news_path(@news), method: @news.new_record? ? :post : :patch) do |f| %>
+ 
+  
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :headlines %>
+      <%= f.text_field :headlines %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :short_description %>
+      <%= f.text_area :short_description %>
+    </div>
+  
+    
+
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+
+
+    <div  class="field">
+    <%= f.label :category_id %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </div>
+
+  <div  class="field">
+    <%= f.label :state_id %><br>
+    <%= f.collection_select :state_id, State.all, :id, :name %>
+  </div>
+  <div>
+       
+    
+
+
+      <%= f.label :city_id %><br>
+      <%= f.collection_select :city_id,  City.all, :id, :name %>
+    </div>
+  
+
+    <div>
+         <%= f.label :images, 'Upload Images' %>
+           <%= f.file_field :images, multiple: true %>
+      </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+  

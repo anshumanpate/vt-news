@@ -1,0 +1,6 @@
+<h1>City Details</h1>
+
+<p><strong>Name:</strong> <%= @city.name %></p>
+<%= link_to 'Destroy', admin_state_city_path(@city.state, @city), data: {"turbo-method": :delete}%>
+
+<%= link_to 'Back', admin_state_cities_path %>

@@ -1,0 +1,20 @@
+<%= form_with(model: @city, url: admin_state_cities_url(@city.state, @city), local: true) do |form| %>
+   
+  
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :state_id %>
+      <%= form.text_field :state_id %>
+    </div>
+  
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+
+  <% end %>
+  

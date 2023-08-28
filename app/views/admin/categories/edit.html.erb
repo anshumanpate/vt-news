@@ -1,0 +1,18 @@
+
+<%= form_for(@category, url: admin_category_path(@category), method: :patch) do |f| %>   
+  
+  <div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+
+
+
+
+
+<div class="actions">
+  <%= f.submit 'Update Category' %>
+</div>
+<% end %>
+ 
+  

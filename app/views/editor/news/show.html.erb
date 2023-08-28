@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Show News</h1>
+  <p><strong>Title:</strong> <%= @news.title %></p>
+  <p><strong>Headlines:</strong> <%= @news.headlines %></p>
+  <p><strong>Short Description:</strong> <%= @news.short_description %></p>
+  <p><strong>Description:</strong> <%= @news.description %></p>
+
+  <% @news.images.each do |image| %>
+    <%= image_tag image, class: "news-image" %>
+  <% end %>
+
+  <p><%= link_to 'Edit', edit_editor_news_path(@news) %> |
+     <%= link_to 'Back', editor_news_index_path %></p>
+</div>

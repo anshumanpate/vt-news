@@ -1,0 +1,34 @@
+<h1>Editor::News#index</h1>
+<p>Find me in app/views/editor/news/index.html.erb</p>
+
+
+<table  class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th  scope="col">Title</th>
+      <th  scope="col">Headlines</th>
+      <th  scope="col">created_at</th>
+      <th  scope="col">Actions</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @news.each do |news| %>
+      <tr>
+        <td><%= news.title %></td>
+        <td><%= news.headlines %></td>
+        <td><%= display_ist_time(news.created_at) %></td>
+
+        <td>
+          <%= link_to 'Show', editor_news_path(news) %>
+          <%= link_to 'Edit', edit_editor_news_path(news) %>
+          
+        </td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+<%= link_to 'New News', new_editor_news_path %>
+

@@ -1,0 +1,22 @@
+<h1>Show News</h1>
+
+<p><strong>Title:</strong> <%= @news.title %></p>
+<p><strong>Headlines:</strong> <%= @news.headlines %></p>
+<p><strong>Short Description:</strong> <%= @news.short_description %></p>
+<p><strong>Description:</strong> <%= @news.description %></p>
+
+
+<% @news.images.each do |image| %>
+    <%= image_tag image %>
+  <% end %>
+  <% @news.videos.each do |video_attachment| %>
+    <video controls width="640" height="360">
+      <source src="<%= rails_blob_path(video_attachment, disposition: :attachment) %>" type="<%= video_attachment.content_type %>">
+      Your browser does not support the video tag.
+    </video>
+  <% end %>
+  
+  
+
+<%= link_to 'Edit', edit_admin_news_path(@news) %> |
+<%= link_to 'Back', admin_news_index_path %>
