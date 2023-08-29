@@ -14,7 +14,11 @@
         <td><%= state.name %></td>
         <td><%= link_to 'Show', admin_state_path(state) %></td>
         <td><%= link_to 'Edit', edit_admin_state_path(state) %></td>
-        <td><%= link_to 'Destroy', admin_state_path(state), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', admin_state_path(state), method: :delete, data: { confirm: 'Are you sure?' }
+         %></td>
+        <td><%= link_to 'new city', new_admin_state_city_path(state) %></td>
+
+         
       </tr>
     <% end %>
   </tbody>
