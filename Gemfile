@@ -14,6 +14,7 @@ gem 'kaminari'
 gem 'devise'
 gem 'rolify'
 gem 'cancancan'
+gem 'rack-cors'
 
 
 # Use pg as the database for Active Record
