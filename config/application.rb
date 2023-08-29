@@ -19,5 +19,11 @@ module NewsBackend
     # config.time_zone = "Central Time (US & Canada)"
     # config.time_zone = 'Asia/Kolkata'
     # config.eager_load_paths << Rails.root.join("extras")
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'http://localhost:3001' # Replace with the URL of your React app
+        resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
+      end
+    end
   end
 end
