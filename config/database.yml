@@ -25,6 +25,8 @@ development:
   <<: *default
   database: News_backend_development
 
+  
+
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -84,3 +86,5 @@ production:
   database: News_backend_production
   username: News_backend
   password: <%= ENV["NEWS_BACKEND_DATABASE_PASSWORD"] %>
+
+
