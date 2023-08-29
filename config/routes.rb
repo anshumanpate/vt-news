@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get '/categories/:category_id/news/:news_id', to: 'categories#news' ,as: 'categor_news'
+
+    resources :categories
+    resources :news
+
+  end
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
