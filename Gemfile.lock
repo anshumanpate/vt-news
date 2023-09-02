@@ -145,10 +145,11 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
+    nokogiri (1.15.4-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    pg (1.5.3)
     public_suffix (5.0.3)
     puma (5.6.6)
       nio4r (~> 2.0)
@@ -207,6 +208,8 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    sqlite3 (1.6.4-arm64-darwin)
+    sqlite3 (1.6.4-x86_64-linux)
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     thor (1.2.2)
@@ -237,6 +240,7 @@ GEM
     zeitwerk (2.6.11)
 
 PLATFORMS
+  arm64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
@@ -248,13 +252,13 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kaminari
-  pg (~> 1.1)
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.7)
   rolify
   selenium-webdriver
   sprockets-rails
+  sqlite3
   stimulus-rails
   turbo-rails
   tzinfo-data
@@ -265,4 +269,4 @@ RUBY VERSION
    ruby 3.0.0p0
 
 BUNDLED WITH
-   2.4.12
+   2.4.19

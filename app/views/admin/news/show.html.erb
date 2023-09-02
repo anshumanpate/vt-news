@@ -1,5 +1,28 @@
 <h1>Show News</h1>
 
+<div class="sidebar">
+
+
+      <form class="d-flex" role="search">
+      <%= form_tag search_admin_news_index_path method: :get do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search news..." , class:"form-control me-2" %>
+        <%= submit_tag "Search", class:"btn btn-outline-success" %>
+      <% end %>
+      </form>
+  <a href="#">Field</a>
+  <a href="#">City</a>
+  <a href="#">Category</a>
+  <a href="#">News</a>
+  <a href="#">State</a>
+
+  <%if user_signed_in?%>
+  <%= link_to "logout" ,destroy_user_session_path,data: {"turbo-method": :delete}  ,class:"nav-link" %>
+  <%else%>
+  <%= link_to "login" ,new_user_session_path  ,class:"nav-link" %>
+
+    <%end%>
+</div>
+
 <p><strong>Title:</strong> <%= @news.title %></p>
 <p><strong>Headlines:</strong> <%= @news.headlines %></p>
 <p><strong>Short Description:</strong> <%= @news.short_description %></p>

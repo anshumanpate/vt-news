@@ -1,3 +1,4 @@
+
 <%= form_with(model: @state, url: @state.new_record? ? admin_states_path : admin_state_path(@state), local: true) do |form| %>
     <% if @state.errors.any? %>
       <div id="error_explanation">
